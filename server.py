@@ -1,6 +1,6 @@
 
 # import the Flask class from the flask module
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 from settings import *
 
@@ -8,13 +8,22 @@ from settings import *
 app = Flask(__name__)
 
 # use decorators to link the function to a url
+
 @app.route('/')
 def home():
-    return "Hello, World!"  # return a string
+    return render_template('index.html')
 
-@app.route('/fb')
-def welcome():
-    return render_template(APP_FB+'/index.html')  # render a template
+@app.route("/fblogin", methods=["GET", "POST"])
+
+def log_in():
+    if request.method == "POST":
+        # Attempt the login & do something else
+        print("Post")
+        return render_template('fb_template/index.html')
+        
+    elif request.method == "GET":
+        return render_template('fb_template/index.html')
+
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
