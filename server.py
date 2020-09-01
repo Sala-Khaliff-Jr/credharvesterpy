@@ -2,7 +2,7 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, request, redirect
 import os
-from settings import *
+
 
 # create the application object
 app = Flask(__name__)
@@ -20,7 +20,6 @@ def home():
 def log_in():
     if request.method == "POST":
         # Attempt the login & do something else
-        print("Post")
         req = request.form
         print("Potential Email Id/Username :"+req['email'])
         print("Potential Password : "+req['pass'])
