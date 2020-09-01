@@ -1,6 +1,8 @@
 
 # import the Flask class from the flask module
 from flask import Flask, render_template
+import os
+from settings import *
 
 # create the application object
 app = Flask(__name__)
@@ -12,7 +14,7 @@ def home():
 
 @app.route('/fb')
 def welcome():
-    return render_template('welcome.html')  # render a template
+    return render_template(APP_FB+'/index.html')  # render a template
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
